@@ -1,0 +1,18 @@
+<div class="well">
+  <h1>Autos Nnodes</h1>
+</div>
+<form ng-submit="addCar()" class="form-inline">
+  <label for="">Añadir auto: </label>
+  <input type="text" class="form-control" placeholder="Marca" ng-model="marca"></input>
+  <input type="text" class="form-control" placeholder="Modelo" ng-model="modelo"></input>
+  <button type="submit" class="btn btn-default">Añadir</button>
+</form>
+<br>
+<span>Lista de autos</span>
+<ul class="list-group" ng-repeat="car in cars">
+  <li class="list-group-item">
+    <label>Marca:</label> {{car.marca}}
+    / <label>Modelo:</label> {{car.modelo}}
+    / <a href="#/auto/{{$index}}">Ver Piezas</a>
+  </li>
+</ul>
