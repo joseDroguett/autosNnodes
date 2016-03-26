@@ -1,7 +1,9 @@
-== README
-
-= Instrucciones
+== Instrucciones
 
 - Instalar gemas: bundle install  
 
 - Instalar dependencias: bower install
+
+== Iniciar el servidor
+
+- rails s
