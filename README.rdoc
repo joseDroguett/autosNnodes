@@ -1,3 +1,6 @@
 == README
 
-Instrucciones
+= Instrucciones
+
+Instalar gemas: bundle install
+Instalar dependencias: bower install
