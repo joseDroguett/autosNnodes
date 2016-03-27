@@ -5,6 +5,12 @@ class PiezasController < ApplicationController
     respond_with auto, pieza
   end
 
+  def destroy
+  	pieza = Pieza.find(params[:id])
+  	pieza.destroy
+  	respond_with auto, pieza
+  end
+
   private
   def pieza_params
     params.require(:pieza).permit(:nombre,:cantidad)
