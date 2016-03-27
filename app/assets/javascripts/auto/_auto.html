@@ -12,10 +12,10 @@
 </form>
 <br>
 <span>Lista de piezas</span>
-<ul class="list-group" ng-repeat="pieza in car.piezas">
-  <li class="list-group-item">
-    <label>Nombre:</label> {{pieza.nombre}}
-    / <label>Cantidad:</label> {{pieza.cantidad}}
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="pieza in car.piezas">
+    <label>{{pieza.cantidad}}</label> <label>{{pieza.nombre}}</label>     
   </li>
 </ul>
+<br>
 <a href="/" class="btn btn-default">Volver</a>

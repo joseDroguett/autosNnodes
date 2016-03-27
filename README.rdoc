@@ -1,7 +1,9 @@
-== README
-
-= Instrucciones
+== Instrucciones antes de empezar
 
 - Instalar gemas: bundle install  
-
 - Instalar dependencias: bower install
+- Migrar base de datos: rake db:migrate
+
+== Iniciar el servidor
+
+- rails s
