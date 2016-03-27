@@ -7,7 +7,12 @@ angular.module('nnodestest', ['ui.router','templates'])
 	    .state('home', {
 			  url: '/home',
 			  templateUrl: 'home/_home.html',
-			  controller: 'homeCtrl'
+			  controller: 'homeCtrl',
+			  resolve: {
+				  postPromise: ['autoFactory', function(autoFactory){
+				    return autoFactory.getAll();
+				  }]
+				}
 			})
 		.state('auto', {
 		  url: '/auto/{id}',
@@ -17,4 +22,5 @@ angular.module('nnodestest', ['ui.router','templates'])
 
 	  $urlRouterProvider.otherwise('home');
 	}
-]);
+])
+;
