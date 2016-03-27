@@ -3,13 +3,16 @@ angular.module('nnodestest')
 	'$scope'
 , '$stateParams'
 , 'autoFactory'
-, function($scope, $stateParams, autoFactory){
-		$scope.car = autoFactory.getAutos()[$stateParams.id];
+, 'auto'
+, function($scope, $stateParams, autoFactory, auto){
+		$scope.car = auto;
 
 		$scope.addPieza = function(){
-		  $scope.car.piezas.push({
+		  autoFactory.addPieza(auto.id, {
 		    nombre: $scope.nombre,
 		    cantidad: $scope.cantidad
+		  }).success(function(pieza) {
+		    $scope.car.piezas.push(pieza);
 		  });
 		  $scope.nombre = '';
 		  $scope.cantidad = '';
