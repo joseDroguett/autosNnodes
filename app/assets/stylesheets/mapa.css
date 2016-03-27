@@ -5,3 +5,37 @@
   right: 0;
   left: 0;    
 }
+
+.contenedorMapa{
+	position: absolute;
+	width: 96%;
+	height: 80%;
+	left: 20px;
+}
+
+#boton-volver{
+	width: 100%;
+}
+#contenedor_volver{
+	padding-bottom: 10px;
+}
+
+.titulo{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+
+.mi_h1{
+	margin-top: 0px;
+}
+
+#well_mapa{
+	margin-bottom: 10px;
+}
+
+#page-header-piezas{
+	margin-bottom: 0;
+	margin-top: 0;
+	padding-bottom: 0;
+}

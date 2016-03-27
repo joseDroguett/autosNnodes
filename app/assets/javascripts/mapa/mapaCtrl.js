@@ -21,7 +21,8 @@ angular.module('nnodestest')
 				longitude: auto.longuitud
 			},
 			options: {
-				draggable: false
+				draggable: false,
+				animation: 1
 			}
 		};
 		console.log($scope.marker);
