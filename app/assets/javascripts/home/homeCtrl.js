@@ -8,8 +8,7 @@ angular.module('nnodestest')
 		$scope.addCar = function(){
 		  autoFactory.addAuto({
 		    marca: $scope.marca,
-		    modelo: $scope.modelo,
-		    piezas: []
+		    modelo: $scope.modelo
 		  });
 		  $scope.cars = autoFactory.getAutos();
 		  $scope.marca = '';
