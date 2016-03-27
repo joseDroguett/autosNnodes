@@ -1,0 +1,2 @@
+class PiezasController < ApplicationController
+end
