@@ -17,7 +17,12 @@ angular.module('nnodestest', ['ui.router','templates'])
 		.state('auto', {
 		  url: '/auto/{id}',
 		  templateUrl: 'auto/_auto.html',
-		  controller: 'autoCtrl'
+		  controller: 'autoCtrl',
+		  resolve: {
+			  auto: ['$stateParams', 'autoFactory', function($stateParams, autoFactory) {
+			    return autoFactory.get($stateParams.id);
+			  }]
+			}
 		});
 
 	  $urlRouterProvider.otherwise('home');
