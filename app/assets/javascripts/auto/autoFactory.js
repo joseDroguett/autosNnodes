@@ -21,6 +21,16 @@ angular.module('nnodestest')
 		  });
 		}
 
+		autos.get = function(id) {
+		  return $http.get('/autos/' + id + '.json').then(function(res){
+		    return res.data;
+		  });
+		};
+
+		autos.addPieza = function(id, pieza) {
+		  return $http.post('/autos/' + id + '/piezas.json', pieza);
+		};
+
 		return autos;
 	}
 ]);
