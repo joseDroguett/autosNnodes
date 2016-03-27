@@ -18,3 +18,5 @@
 
 # Ignore bower
 /vendor/assets/bower_components
+
+Gemfile.lock

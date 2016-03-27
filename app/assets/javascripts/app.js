@@ -1,4 +1,4 @@
-angular.module('nnodestest', ['ui.router','templates'])
+angular.module('nnodestest', ['ui.router','templates','uiGmapgoogle-maps'])
 .config([
 	'$stateProvider'
 , '$urlRouterProvider'
@@ -24,7 +24,18 @@ angular.module('nnodestest', ['ui.router','templates'])
 			  }]
 			}
 		});
-
+		$stateProvider
+	    .state('mapa', {
+			  url: '/mapa/{id}',
+			  templateUrl: 'mapa/_mapa.html',
+			  controller: 'mapaCtrl',
+			  resolve: {
+				  auto: ['$stateParams', 'autoFactory', function($stateParams, autoFactory) {
+				    return autoFactory.get($stateParams.id);
+				  }]
+				}
+			})
+	  ;
 	  $urlRouterProvider.otherwise('home');
 	}
 ])

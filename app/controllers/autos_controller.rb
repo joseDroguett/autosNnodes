@@ -13,6 +13,6 @@ class AutosController < ApplicationController
 
   private
   def auto_params
-    params.require(:auto).permit(:modelo, :marca)
+    params.require(:auto).permit(:modelo, :marca, :latitud, :longuitud)
   end
 end
