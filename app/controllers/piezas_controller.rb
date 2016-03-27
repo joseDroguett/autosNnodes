@@ -1,6 +1,6 @@
 class PiezasController < ApplicationController
 	def create
-    auto = Pieza.find(params[:auto_id])
+    auto = Auto.find(params[:auto_id])
     pieza = auto.piezas.create(pieza_params)
     respond_with auto, pieza
   end
