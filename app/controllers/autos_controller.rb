@@ -11,6 +11,12 @@ class AutosController < ApplicationController
     respond_with Auto.find(params[:id])
   end
 
+  def destroy
+    auto = Auto.find(params[:id])   
+    auto.destroy
+    respond_with true
+  end
+
   private
   def auto_params
     params.require(:auto).permit(:modelo, :marca, :latitud, :longuitud)

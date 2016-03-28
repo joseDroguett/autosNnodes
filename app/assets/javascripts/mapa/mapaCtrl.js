@@ -25,6 +25,5 @@ angular.module('nnodestest')
 				animation: 1
 			}
 		};
-		console.log($scope.marker);
 	}
 ])
