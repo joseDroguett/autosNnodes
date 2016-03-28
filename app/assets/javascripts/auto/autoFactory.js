@@ -31,6 +31,10 @@ angular.module('nnodestest')
 		  return $http.post('/autos/' + id + '/piezas.json', pieza);
 		};
 
+		autos.deletePieza = function(auto_id, pieza_id) {
+			return $http.delete('/autos/'+auto_id+'/piezas/'+pieza_id+'.json');
+		};
+
 		return autos;
 	}
 ]);

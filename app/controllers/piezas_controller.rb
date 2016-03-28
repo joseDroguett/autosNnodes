@@ -6,9 +6,9 @@ class PiezasController < ApplicationController
   end
 
   def destroy
-  	pieza = Pieza.find(params[:id])
-  	pieza.destroy
-  	respond_with auto, pieza
+  	pieza = Pieza.find(params[:id])  	
+    pieza.destroy
+    respond_with true
   end
 
   private

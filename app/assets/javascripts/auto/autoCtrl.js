@@ -17,5 +17,13 @@ angular.module('nnodestest')
 		  $scope.nombre = '';
 		  $scope.cantidad = '';
 		};
+
+		$scope.borrarPieza = function(pieza_id){
+		  autoFactory.deletePieza(auto.id, pieza_id).then(function(){
+		  	autoFactory.get(auto.id).then(function(data){
+		  		$scope.car = data;
+		  	});
+		  });
+		};
 	}
 ])
