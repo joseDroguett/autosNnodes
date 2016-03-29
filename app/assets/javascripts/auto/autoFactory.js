@@ -21,6 +21,12 @@ angular.module('nnodestest')
 		  });
 		}
 
+		autos.updateAuto = function(id_auto, auto) {
+		  return $http.put('/autos/'+id_auto+'.json', auto).then(function(res){
+		  	return res.status;
+		  });
+		};
+
 		autos.get = function(id) {
 		  return $http.get('/autos/' + id + '.json').then(function(res){
 		    return res.data;
