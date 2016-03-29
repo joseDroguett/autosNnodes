@@ -17,9 +17,8 @@ class PiezasController < ApplicationController
 
   def update
     pieza = Pieza.find(params[:id])
-    if pieza.update(pieza_params)
-      respond_with pieza
-    end
+    pieza.update(pieza_params)
+    respond_with pieza
   end
 
   private
