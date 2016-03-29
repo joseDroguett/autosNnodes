@@ -27,8 +27,20 @@ angular.module('nnodestest')
 		  });
 		};
 
+		autos.getPieza = function(id_auto,id_pieza) {
+		  return $http.get('/autos/'+id_auto+'/piezas/'+id_pieza+'.json').then(function(res){
+		    return res.data;
+		  });
+		};
+
 		autos.addPieza = function(id, pieza) {
 		  return $http.post('/autos/' + id + '/piezas.json', pieza);
+		};
+
+		autos.updatePieza = function(id_auto, id_pieza, pieza) {
+		  return $http.put('/autos/'+id_auto+'/piezas/'+id_pieza+'.json', pieza).then(function(res){
+		  	return res.status;
+		  });
 		};
 
 		autos.borrarPiezasAutos = function (piezas,callback){

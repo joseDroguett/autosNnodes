@@ -14,16 +14,27 @@ angular.module('nnodestest', ['ui.router','templates','uiGmapgoogle-maps'])
 				  }]
 				}
 			})
-		.state('auto', {
-		  url: '/auto/{id}',
-		  templateUrl: 'auto/_auto.html',
-		  controller: 'autoCtrl',
-		  resolve: {
-			  auto: ['$stateParams', 'autoFactory', function($stateParams, autoFactory) {
-			    return autoFactory.get($stateParams.id);
-			  }]
-			}
-		});
+			.state('auto', {
+			  url: '/auto/{id}',
+			  templateUrl: 'auto/_auto.html',
+			  controller: 'autoCtrl',
+			  resolve: {
+				  auto: ['$stateParams', 'autoFactory', function($stateParams, autoFactory) {
+				    return autoFactory.get($stateParams.id);
+				  }]
+				}
+			})
+			.state('pieza', {
+			  url: '/auto/{id_auto}/pieza/{id_pieza}',
+			  templateUrl: 'pieza/_pieza.html',
+			  controller: 'piezaCtrl',
+			  resolve: {
+				  pieza: ['$stateParams', 'autoFactory', function($stateParams, autoFactory) {
+				    return autoFactory.getPieza($stateParams.id_auto,$stateParams.id_pieza);
+				  }]
+				}
+			})
+			;
 		$stateProvider
 	    .state('mapa', {
 			  url: '/mapa/{id}',

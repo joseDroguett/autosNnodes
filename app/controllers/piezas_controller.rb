@@ -5,10 +5,21 @@ class PiezasController < ApplicationController
     respond_with auto, pieza
   end
 
+  def show
+    respond_with Pieza.find(params[:id])
+  end
+
   def destroy
   	pieza = Pieza.find(params[:id])  	
     pieza.destroy
-    respond_with true
+    respond_with pieza
+  end
+
+  def update
+    pieza = Pieza.find(params[:id])
+    if pieza.update(pieza_params)
+      respond_with pieza
+    end
   end
 
   private

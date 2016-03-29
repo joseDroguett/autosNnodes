@@ -14,7 +14,6 @@ class AutosController < ApplicationController
   def destroy
     auto = Auto.find(params[:id])   
     auto.destroy
-    respond_with true
   end
 
   private

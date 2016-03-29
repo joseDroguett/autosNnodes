@@ -14,7 +14,7 @@
 <label>Lista de piezas</label>
 <ul class="list-group">
   <li class="list-group-item" ng-repeat="pieza in car.piezas">
-    <label>{{pieza.cantidad}}</label> <label>{{pieza.nombre}}</label> <a class="aSinLink" ng-click="borrarPieza(pieza.id)">Eliminar</a>
+    <label>{{pieza.cantidad}}</label> <label>{{pieza.nombre}}</label> <a class="aSinLink" ng-click="borrarPieza(pieza.id)">Eliminar</a> <a href="#/auto/{{car.id}}/pieza/{{pieza.id}}">Actualizar</a>
   </li>
 </ul>
 <br>
