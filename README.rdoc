@@ -1,9 +1,15 @@
-== Instrucciones antes de empezar
+# Nnodes Car
 
-- Instalar gemas: bundle install  
-- Instalar dependencias: bower install
-- Migrar base de datos: rake db:migrate
+Proyecto desarrollado con [Angular.js](http://angularjs.org) en su versión 1.5.3 y [Rails](http://rubyonrails.org/) en su version 4.2.6.
 
-== Iniciar el servidor
+## Antes de empezar
 
-- rails s
+Add the following to your Gemfile:
+
+    bundle install
+    bower install
+    rake db:migrate
+
+## Para iniciar el servidor
+
+		rails s
