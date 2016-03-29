@@ -4,12 +4,14 @@ Proyecto desarrollado con [Angular.js](http://angularjs.org) en su versión 1.5.
 
 ## Antes de empezar
 
-Add the following to your Gemfile:
+Debes intalar las dependencias de rails y las dependencias de angular. Ademas se debe migrar la base de datos. Para esto ejecuta los siguientes comandos:
 
     bundle install
     bower install
     rake db:migrate
 
-## Para iniciar el servidor
+## Iniciar servidor
+
+Para iniciar el servidor se debe ejecutar las siguientes operaciones:
 
 		rails s
