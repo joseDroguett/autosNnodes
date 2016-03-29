@@ -4,8 +4,8 @@ angular.module('nnodestest', ['ui.router','templates','uiGmapgoogle-maps'])
 , '$urlRouterProvider'
 , function($stateProvider, $urlRouterProvider) {
 	  $stateProvider
-	    .state('home', {
-			  url: '/home',
+	    .state('autos', {
+			  url: '/autos',
 			  templateUrl: 'home/_home.html',
 			  controller: 'homeCtrl',
 			  resolve: {
@@ -18,6 +18,16 @@ angular.module('nnodestest', ['ui.router','templates','uiGmapgoogle-maps'])
 			  url: '/auto/{id}',
 			  templateUrl: 'auto/_auto.html',
 			  controller: 'autoCtrl',
+			  resolve: {
+				  auto: ['$stateParams', 'autoFactory', function($stateParams, autoFactory) {
+				    return autoFactory.get($stateParams.id);
+				  }]
+				}
+			})
+			.state('autoEdit', {
+			  url: '/auto/{id}/edit',
+			  templateUrl: 'auto/_autoEdit.html',
+			  controller: 'autoEditCtrl',
 			  resolve: {
 				  auto: ['$stateParams', 'autoFactory', function($stateParams, autoFactory) {
 				    return autoFactory.get($stateParams.id);
@@ -47,7 +57,7 @@ angular.module('nnodestest', ['ui.router','templates','uiGmapgoogle-maps'])
 				}
 			})
 	  ;
-	  $urlRouterProvider.otherwise('home');
+	  $urlRouterProvider.otherwise('autos');
 	}
 ])
 ;
